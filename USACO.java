@@ -24,5 +24,8 @@ public class USACO {
     }
     return volume();
   }
+  private static void stomp(int r, int c, int n, int[][] lake) {
+    
+  }
   public static int silver(String filename);
 }
