@@ -1,8 +1,10 @@
+import java.io.*;
 import java.util.*;
 public class USACO {
   public static int bronze(String filename) throws FileNotFoundException{
     File text = new File(filename);
     Scanner inf = new Scanner(text); //Let's give meaning to the top four integers
+    String[] integers = inf.nextLine().split(""); //Splits the first line at spaces.
     int R = Integer.parseInt(text.next()); //Number of rows.
     int C = Integer.parseInt(text.next()); //Number of columns.
     int E = Integer.parseInt(text.next()); //The elevation.
