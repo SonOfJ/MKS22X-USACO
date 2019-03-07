@@ -18,6 +18,11 @@ public class USACO {
         lake[i][j] = Integer.parseInt(row[j]); //Fill in the values.
       }
     }
+    for (int i = 0; i < N; i = i + 1) { //Stomp instructions.
+      String[] input = inf.nextLine().split(""); //Consider inputs.
+      stomp(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2])); //Stomp helper function.
+    }
+    return volume();
   }
   public static int silver(String filename);
 }
