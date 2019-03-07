@@ -25,7 +25,8 @@ public class USACO {
     return volume();
   }
   private static void stomp(int r, int c, int n, int[][] lake) {
-    
+    int peak = lake[r][c]; //Represents the highest point.
+    for(i = r;
   }
   public static int silver(String filename);
 }
