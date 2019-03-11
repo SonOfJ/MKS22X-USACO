@@ -10,8 +10,6 @@ public class USACO {
     int E = Integer.parseInt(integers[2]); //The elevation.
     int N = Integer.parseInt(integers[3]); //Number of stomping instructions.
     int[][] lake = new int[R][C]; //Use 2D array to represent the lake.
-    Scanner brave = new Scanner(text); //Need a new scanner.
-    brave.nextLine(); //Move on to the elevation values.
     for (int i = 0; i < R; i = i + 1) { //Add the elevation values.
       String[] row = inf.nextLine().split(" "); //Time to make the rows.
       for (int j = 0; j < C; j = j + 1) {
@@ -33,8 +31,8 @@ public class USACO {
         }
       }
     }
-    for (int i = 0; i < r + 2; i = i + 1) { //Do the stomping.
-      for (int j = 0; j < c + 2; j = j + 1) {
+    for (int i = r - 1; i < r + 2; i = i + 1) { //Do the stomping.
+      for (int j = c - 1; j < c + 2; j = j + 1) {
         if (peak - n < lake[i][j]) {
           lake[i][j] = peak - n;
         }
