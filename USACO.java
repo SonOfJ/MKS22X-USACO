@@ -55,9 +55,30 @@ public class USACO {
   public static int silver(String filename) throws FileNotFoundException {
     File text = new File(filename);
     Scanner inf = new Scanner(text);
-    String[] integers = inf.nextLine().split(" "); //Give meaning to the integers in the first row.
+    String[] integers = inf.nextLine().split(""); //Give meaning to the integers in the first row.
     int N = Integer.parseInt(integers[0]);
     int M = Integer.parseInt(integers[1]);
     int T = Integer.parseInt(integers[2]);
+    int[][] land = new int[N][M]; //Create the map.
+    for (int i = 0; i < N, i = i + 1) {
+      String[] row = inf.nextLine().split("");
+      for (int j = 0; j < M; j = j + 1) {
+        if (row[j].equals(".")) {
+          land[i][j] = 0; //Open space.
+        } else {
+          land[i][j] = -1; //Trees.
+        }
+      }
+    }
+    String[] coordinates = inf.nextLine().split(""); //Coordinates for start and end locations.
+    int R1 = Integer.parseInt(coordinates[0]) - 1; //Array coordinates start at 0.
+    int C1 = Integer.parseInt(coordinates[1]) - 1;
+    int R2 = Integer.parseInt(coordinates[2]) - 1;
+    int C2 = Integer.parseInt(coordinates[3]) - 1;
+    land[R1][C1] = 1;
+    for (int i = 0; i < T; i = i + 1) {
+      land = move(land);
+    }
+    return land[R2][C2];
   }
 }
