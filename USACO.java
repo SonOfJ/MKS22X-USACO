@@ -75,9 +75,9 @@ public class USACO {
     int C1 = Integer.parseInt(coordinates[1]) - 1;
     int R2 = Integer.parseInt(coordinates[2]) - 1;
     int C2 = Integer.parseInt(coordinates[3]) - 1;
-    land[R1][C1] = 1;
+    land[R1][C1] = 1; //First level.
     for (int i = 0; i < T; i = i + 1) {
-      land = move(land);
+      land = move(land); //Get the array that contains the levels of moves.
     }
     return land[R2][C2];
   }
