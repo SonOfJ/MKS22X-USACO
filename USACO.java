@@ -9,7 +9,7 @@ public class USACO {
     int C = Integer.parseInt(integers[1]); //Number of columns.
     int E = Integer.parseInt(integers[2]); //The elevation.
     int N = Integer.parseInt(integers[3]); //Number of stomping instructions.
-    int[][] lake = int[R][C]; //Use 2D array to represent the lake.
+    int[][] lake = new int[R][C]; //Use 2D array to represent the lake.
     Scanner brave = new Scanner(text); //Need a new scanner.
     brave.nextLine(); //Move on to the elevation values.
     for (int i = 0; i < R; i = i + 1) { //Add the elevation values.
