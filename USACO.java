@@ -81,4 +81,26 @@ public class USACO {
     }
     return land[R2][C2];
   }
+  private static int[][] move(int[][] land) {
+    int[] moves = {-1, 0, 1, 0, 0, -1, 0, 1}; //Coordinates for movement.
+    int[][] move = new int[land.length][land[0].length];
+    for (int i = 0; i < move.length; i = i + 1) {
+      for (int j = 0; j < move[0].length; j = j + 1) {
+        if (land[i][j] == -1) { //Hits a tree.
+          move[i][j] = -1; //No more movement.
+        } else {
+          int level = 0; //Counter.
+          for (int m = 0; m < 8; m = m + 2) {
+            int rMove = i + moves[m]; //Vertical movement.
+            int cMove = j + moves[m + 1]; //Horizontal movement.
+            if (rMove >= 0 && cMove >= 0 && rMove < land.length && cMove < land[0].length && land[rMove][cMove] != -1) { //Does not go out of bounds and does not hit a tree.
+              level = level + land[rMove][cMove];
+            }
+          }
+          move[i][j] = level;
+        }
+      }
+    }
+    return move;
+  }
 }
