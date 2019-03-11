@@ -26,7 +26,20 @@ public class USACO {
   }
   private static void stomp(int r, int c, int n, int[][] lake) {
     int peak = lake[r][c]; //Represents the highest point.
-    for(i = r;
+    for (int i = r - 1; i < r + 2; i = i + 1) { //Find the highest point.
+      for (int j = c - 1; j < c + 2; j = j + 1) {
+        if (lake[i][j] > peak) {
+          peak = lake[i][j];
+        }
+      }
+    }
+    for (int i = 0; i < r + 2; i = i + 1) { //Do the stomping.
+      for (int j = 0; j < c + 2; j = j + 1) {
+        if (peak - n < lake[i][j]) {
+          lake[i][j] = peak - n;
+        }
+      }
+    }
   }
   public static int silver(String filename);
 }
