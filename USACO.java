@@ -4,7 +4,7 @@ public class USACO {
   public static int bronze(String filename) throws FileNotFoundException{
     File text = new File(filename);
     Scanner inf = new Scanner(text); //Let's give meaning to the top four integers
-    String[] integers = inf.nextLine().split(""); //Splits the first line at spaces.
+    String[] integers = inf.nextLine().split(" "); //Splits the first line at spaces.
     int R = Integer.parseInt(integers[0]); //Number of rows.
     int C = Integer.parseInt(integers[1]); //Number of columns.
     int E = Integer.parseInt(integers[2]); //The elevation.
@@ -13,13 +13,13 @@ public class USACO {
     Scanner brave = new Scanner(text); //Need a new scanner.
     brave.nextLine(); //Move on to the elevation values.
     for (int i = 0; i < R; i = i + 1) { //Add the elevation values.
-      String[] row = inf.nextLine().split(""); //Time to make the rows.
+      String[] row = inf.nextLine().split(" "); //Time to make the rows.
       for (int j = 0; j < C; j = j + 1) {
         lake[i][j] = Integer.parseInt(row[j]); //Fill in the values.
       }
     }
     for (int i = 0; i < N; i = i + 1) { //Stomp instructions.
-      String[] input = inf.nextLine().split(""); //Consider inputs.
+      String[] input = inf.nextLine().split(" "); //Consider inputs.
       stomp(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2]), lake); //Stomp helper function.
     }
     return volume(lake, E);
@@ -55,7 +55,7 @@ public class USACO {
   public static int silver(String filename) throws FileNotFoundException {
     File text = new File(filename);
     Scanner inf = new Scanner(text);
-    String[] integers = inf.nextLine().split(""); //Give meaning to the integers in the first row.
+    String[] integers = inf.nextLine().split(" "); //Give meaning to the integers in the first row.
     int N = Integer.parseInt(integers[0]);
     int M = Integer.parseInt(integers[1]);
     int T = Integer.parseInt(integers[2]);
@@ -70,7 +70,7 @@ public class USACO {
         }
       }
     }
-    String[] coordinates = inf.nextLine().split(""); //Coordinates for start and end locations.
+    String[] coordinates = inf.nextLine().split(" "); //Coordinates for start and end locations.
     int R1 = Integer.parseInt(coordinates[0]) - 1; //Array coordinates start at 0.
     int C1 = Integer.parseInt(coordinates[1]) - 1;
     int R2 = Integer.parseInt(coordinates[2]) - 1;
