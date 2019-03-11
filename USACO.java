@@ -60,7 +60,7 @@ public class USACO {
     int M = Integer.parseInt(integers[1]);
     int T = Integer.parseInt(integers[2]);
     int[][] land = new int[N][M]; //Create the map.
-    for (int i = 0; i < N, i = i + 1) {
+    for (int i = 0; i < N; i = i + 1) {
       String[] row = inf.nextLine().split("");
       for (int j = 0; j < M; j = j + 1) {
         if (row[j].equals(".")) {
