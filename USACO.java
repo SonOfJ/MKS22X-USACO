@@ -20,7 +20,7 @@ public class USACO {
     }
     for (int i = 0; i < N; i = i + 1) { //Stomp instructions.
       String[] input = inf.nextLine().split(""); //Consider inputs.
-      stomp(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2])); //Stomp helper function.
+      stomp(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2]), lake); //Stomp helper function.
     }
     return volume(lake, E);
   }
