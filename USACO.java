@@ -22,7 +22,7 @@ public class USACO {
       String[] input = inf.nextLine().split(""); //Consider inputs.
       stomp(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2])); //Stomp helper function.
     }
-    return volume();
+    return volume(lake, E);
   }
   private static void stomp(int r, int c, int n, int[][] lake) {
     int peak = lake[r][c]; //Represents the highest point.
@@ -40,6 +40,17 @@ public class USACO {
         }
       }
     }
+  }
+  private static int volume(int[][] lake, int E) {
+    int depth = 0; //Represents total depth of lake.
+    for (int i = 0; i < lake.length; i = i + 1) {
+      for (int j = 0; j < lake[0].length; j = j + 1) {
+        if (lake[i][j] < E) { //If the bottom is lower than the elevation.
+          depth = depth - lake[i][j] + E; //Add to the total depth.
+        }
+      }
+    }
+    return depth * 72 * 72;
   }
   public static int silver(String filename);
 }
