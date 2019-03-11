@@ -52,5 +52,12 @@ public class USACO {
     }
     return depth * 72 * 72;
   }
-  public static int silver(String filename);
+  public static int silver(String filename) throws FileNotFoundException {
+    File text = new File(filename);
+    Scanner inf = new Scanner(text);
+    String[] integers = inf.nextLine().split(" "); //Give meaning to the integers in the first row.
+    int N = Integer.parseInt(integers[0]);
+    int M = Integer.parseInt(integers[1]);
+    int T = Integer.parseInt(integers[2]);
+  }
 }
